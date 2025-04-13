@@ -52,7 +52,6 @@ def extract_features(transaction):
     # Post-transaction account balance to transaction amount ratio
     features.append(transaction.newBalanceOrig / (transaction.amount + 1e-6))
     
-    # Feature name list
     feature_names = [
         'amount', 'oldBalanceOrig', 'newBalanceOrig', 'oldBalanceDest', 'newBalanceDest',
         'balanceDiffOrig', 'balanceDiffDest',
@@ -62,5 +61,4 @@ def extract_features(transaction):
         'amountToDestBalanceRatio', 'origBalanceChangeRatio', 'destBalanceChangeRatio',
         'isLargeTransaction', 'postTransactionBalanceRatio'
     ]
-    
     return np.array(features), feature_names
